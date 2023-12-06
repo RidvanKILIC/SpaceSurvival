@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour,IDamagable
 {
-    [SerializeField] int health;
+    [SerializeField] float health;
     [SerializeField] healthBar _healthBar;
     [SerializeField] GameObject singleShooter;
     [SerializeField] GameObject doubleShooter;
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour,IDamagable
     GameObject shooterWeapon;
     GameObject rocketWeapon;
     shooterr_Spaceship _shooter;
-    public int Health { get; set; }
+    public float Health { get; set; }
 
 
     // Start is called before the first frame update
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour,IDamagable
     {
         return rocketWeapon;
     }
-    public void Damage(int _damageAmount)
+    public void Damage(float _damageAmount)
     {
         Health -= _damageAmount;
         _healthBar.decraseHealth(_damageAmount);
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour,IDamagable
             Debug.Log("Died");
         }
     }
-    public void Heal(int _healthAmount)
+    public void Heal(float _healthAmount)
     {
         throw new System.NotImplementedException();
     }

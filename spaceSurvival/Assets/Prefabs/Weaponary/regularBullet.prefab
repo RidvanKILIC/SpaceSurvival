@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fae1a57d0a3f6f4bbd977dde453573e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 10
   speed: 30
-  range: 5
+  range: 15
   canMove: 0
   rb: {fileID: 7856167411909346366}
   shootSFX: {fileID: 8300000, guid: 5ff5bd936a30a904da907f35c8dd382e, type: 3}

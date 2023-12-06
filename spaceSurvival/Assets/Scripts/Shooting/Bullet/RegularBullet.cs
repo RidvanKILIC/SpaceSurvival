@@ -49,5 +49,19 @@ public class RegularBullet : Bullet
         }
            
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            IDamagable col = collision.gameObject.GetComponent<IDamagable>();
+            if (col != null)
+            {
+                col.Damage(damage);
+                playHitFx(this.transform.position);
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
 }
