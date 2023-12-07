@@ -18,10 +18,12 @@ public abstract class Enemy : MonoBehaviour
     public healthBar _healthBar;
     public Vector2 target, direction;
     protected Rigidbody2D rb;
-
+    protected CapsuleCollider2D col;
+    public GameObject portal;
+    public GameObject ship;
     public GameObject impactFx;
     public AudioClip movementSFX;
     public AudioClip impactSFX;
-
+    protected bool spawned = false;
     public abstract void impact(Vector3 pos);
 }

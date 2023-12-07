@@ -61,6 +61,10 @@ public class RegularBullet : Bullet
                 playHitFx(this.transform.position);
                 Destroy(this.gameObject);
             }
+            else
+            {
+                Debug.Log("Hit null");
+            }
         }
     }
 
