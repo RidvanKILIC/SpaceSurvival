@@ -53,7 +53,7 @@ MonoBehaviour:
   health: 10
   damage: 10
   DamageCoolDown: 0
-  speed: 4
+  speed: 10
   _healthBar: {fileID: 5048441842460565726}
   target: {x: 0, y: 0}
   direction: {x: 0, y: 0}

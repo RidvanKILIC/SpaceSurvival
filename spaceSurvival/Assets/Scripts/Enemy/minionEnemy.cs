@@ -16,18 +16,18 @@ public class minionEnemy : Enemy,IDamagable
         Health = health;
         _healthBar.setMaxHealth(Health);
         Destroy(this.gameObject, 20f);
-        targetPos = targetObj.position;
+        InvokeRepeating("refreshTarget", 3, 3);
         thisPos = transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //float step = speed * Time.deltaTime;
 
         direction.Normalize();
-        transform.Translate(direction * speed * Time.deltaTime, Space.World);
-
+        transform.Translate(-direction * speed * Time.fixedDeltaTime, Space.World);
+        targetPos = targetObj.position;
         targetPos.x = targetPos.x - thisPos.x;
         targetPos.y = targetPos.y - thisPos.y;
         angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
@@ -56,6 +56,12 @@ public class minionEnemy : Enemy,IDamagable
             impact(transform.position);
             Destroy(this.gameObject);
         }
+    }
+    public void refreshTarget()
+    {
+        targetPos = targetObj.position;
+        targetPos.x = targetPos.x - thisPos.x;
+        targetPos.y = targetPos.y - thisPos.y;
     }
     IEnumerator damageCoolDown()
     {
