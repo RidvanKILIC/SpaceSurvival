@@ -10,6 +10,7 @@ public class Player : MonoBehaviour,IDamagable
     [SerializeField] GameObject doubleShooter;
     [SerializeField] GameObject tripleShooter;
     [SerializeField] GameObject rocketShooter;
+    [SerializeField] int scrapCount = 0;
     GameObject shooterWeapon;
     GameObject rocketWeapon;
     shooterr_Spaceship _shooter;
@@ -84,6 +85,31 @@ public class Player : MonoBehaviour,IDamagable
     public void Heal(float _healthAmount)
     {
         throw new System.NotImplementedException();
+    }
+    /// <summary>
+    /// 0 for substraction, 1 for addition
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <param name="operation"></param>
+    public void incDecScrapCount(int amount, int operation)
+    {
+        switch (operation)
+        {
+            case 0:
+                scrapCount -= amount;
+                break;
+            case 1:
+                scrapCount += amount;
+                break;
+            default:
+                Debug.LogError("Please choose operation correctly");
+                break;
+        }
+        scrapCount += amount;
+    }
+    public int getScrapCount()
+    {
+        return scrapCount; 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

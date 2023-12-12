@@ -24,6 +24,7 @@ public class minionEnemy : Enemy,IDamagable
         StartCoroutine(spawnRoutine());
     }
 
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -60,6 +61,14 @@ public class minionEnemy : Enemy,IDamagable
         if (Health <= 0)
         {
             impact(transform.position);
+            for(int i = 0; i < dropCount; i++)
+            {
+                Debug.Log("Drop Item Spawned");
+                float posX = Random.Range(this.transform.position.x, this.transform.position.x + 2f);
+                float posY = Random.Range(this.transform.position.y, this.transform.position.y + 2f);
+                Instantiate(dropObject, new Vector3(posX,posY,this.transform.position.z), Quaternion.identity);
+            }
+            
             Destroy(this.gameObject);
         }
     }

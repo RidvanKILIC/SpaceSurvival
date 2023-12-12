@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public abstract class Enemy : MonoBehaviour
 {
     public string Tag;
+    public float dropCount;
     public float offset = -90f;
     protected Transform targetObj;
     protected Vector3 targetPos;
@@ -24,6 +25,7 @@ public abstract class Enemy : MonoBehaviour
     public GameObject impactFx;
     public AudioClip movementSFX;
     public AudioClip impactSFX;
+    public GameObject dropObject;
     protected bool spawned = false;
     public abstract void impact(Vector3 pos);
 }

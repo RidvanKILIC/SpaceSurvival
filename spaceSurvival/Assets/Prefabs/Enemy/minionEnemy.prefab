@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: Enemy
+  dropCount: 1
   offset: 90
   health: 10
   damage: 10
@@ -62,6 +63,7 @@ MonoBehaviour:
   impactFx: {fileID: 3235600368030790709, guid: ce49688096dfad24a86a301b1d8a37d6, type: 3}
   movementSFX: {fileID: 8300000, guid: a9e3fee688cf000499bded40dd54ff48, type: 3}
   impactSFX: {fileID: 8300000, guid: 5dbc74a65da58144aa0a20190bcd4909, type: 3}
+  dropObject: {fileID: 7656484216210448078, guid: 5043dec3236b93c409dade5200ca1a57, type: 3}
 --- !u!50 &5938721745603519024
 Rigidbody2D:
   serializedVersion: 4
