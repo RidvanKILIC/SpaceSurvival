@@ -22,6 +22,8 @@ public class Player : MonoBehaviour,IDamagable
     {
         _shooter = GetComponent<shooterr_Spaceship>();
         Health = health;
+        UI_Manager.UInstance.updateHP(Health);
+        UI_Manager.UInstance.updateXP(scrapCount);
         _healthBar.setMaxHealth(Health);
     }
     // Update is called once per frame
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour,IDamagable
     {
         Health -= _damageAmount;
         _healthBar.decraseHealth(_damageAmount);
+        UI_Manager.UInstance.updateHP(Health);
         if (Health <= 0)
         {
             Debug.Log("Died");
@@ -106,6 +109,7 @@ public class Player : MonoBehaviour,IDamagable
                 break;
         }
         scrapCount += amount;
+        UI_Manager.UInstance.updateXP(scrapCount);
     }
     public int getScrapCount()
     {

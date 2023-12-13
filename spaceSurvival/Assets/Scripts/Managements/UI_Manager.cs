@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
 {
+    [SerializeField] TMP_Text HP_Text;
+    [SerializeField] TMP_Text XP_Text;
     [SerializeField] float warningFrostAmt;
     [SerializeField] float freezFrostAmt;
     [SerializeField] GameObject warningPanel;
@@ -52,6 +55,14 @@ public class UI_Manager : MonoBehaviour
     {
         if(frostActive)
             StartCoroutine(resetFrostRoutine());
+    }
+    public void updateHP(float _HP)
+    {
+        HP_Text.text = _HP.ToString();
+    }
+    public void updateXP(int _XP)
+    {
+        XP_Text.text = _XP.ToString();
     }
     IEnumerator resetFrostRoutine()
     {
